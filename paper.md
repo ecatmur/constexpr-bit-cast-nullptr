@@ -54,7 +54,7 @@ The only conversions that are actually infeasible or unsafe at compile time are:
 
 This is a library extension, though in practice it is implemented through compiler builtins.
 
-# 4. Technical specification
+## 4. Technical specification
 
 Amend 22.15.3 \[bit.cast] as follows:
 
@@ -69,4 +69,4 @@ Remarks: This function is constexpr if and only if To, From, and the types of al
 
 Update `__cpp_lib_bit_cast` to the year and month of adoption.
 
-# 5. Acknowledgements
+## 5. Acknowledgements
