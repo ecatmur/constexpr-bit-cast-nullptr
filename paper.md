@@ -62,7 +62,7 @@ Amend 22.15.3 \[bit.cast] as follows:
 Remarks: This function is constexpr if and only if To, From, and the types of all subobjects <ins>`o`</ins>of To and From are types T such that:
 * is_union_v<T> is false;
 * is_pointer_v<T> is false<ins>, or `o` is a null pointer value</ins>;
-* >ins>for To and its subobjects,</ins> is_member_pointer_v<T> is false<ins>, or `o` is a null member pointer value</ins>;
+* <ins>for To and its subobjects,</ins> is_member_pointer_v<T> is false<ins>, or `o` is a null member pointer value</ins>;
 * is_volatile_v<T> is false; and
 * T has no non-static data members of reference type.
 </quote>
