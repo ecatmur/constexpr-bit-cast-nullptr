@@ -60,13 +60,20 @@ Amend 22.15.3 \[bit.cast] as follows:
 
 <quote>
 Remarks: This function is constexpr if and only if To, From, and the types of all subobjects <ins>`o`</ins>of To and From are types T such that:
-* is_­union_­v<T> is false;
-* is_­pointer_­v<T> is false<ins>, or `o` is a null pointer value</ins>;
-* is_­member_­pointer_­v<T> is false<ins>, or `o` is a null member pointer value, or `o` is a subobject of From</ins>;
-* is_­volatile_­v<T> is false; and
+* is_union_v<T> is false;
+* is_pointer_v<T> is false<ins>, or `o` is a null pointer value</ins>;
+* >ins>for To and its subobjects,</ins> is_member_pointer_v<T> is false<ins>, or `o` is a null member pointer value</ins>;
+* is_volatile_v<T> is false; and
 * T has no non-static data members of reference type.
 </quote>
 
 Update `__cpp_lib_bit_cast` to the year and month of adoption.
 
-## 5. Acknowledgements
+## 5. Discussion
+
+We could further extend this by allowing conversions that are allowed in constant evaluation;
+for example, between a pointer (or reference) type and itself,
+or from a derived class pointer type to a base class pointer.
+This would require significantly more complicated wording and I am unsure that there would be motivation for it.
+
+## 6. Acknowledgements
